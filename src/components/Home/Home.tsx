@@ -20,7 +20,7 @@ export const Home = () => {
               <NewRoomButton size="huge" />
             </div>
           }
-          image={'/screenshot4.png'}
+          image={'/boltzy-logo-large.svg'}
           logo={<BoltzyLogo size={80} />}
         />
         <Divider horizontal>
@@ -58,7 +58,7 @@ export const Home = () => {
         <Hero
           heroText={'React to moments together.'}
           subText={"Find moments of shared joy even when you're apart."}
-          image={'/screenshot18.png'}
+          image={'/boltzy-logo-large.svg'}
           color="green"
         />
         <Divider horizontal>
@@ -104,7 +104,7 @@ export const Home = () => {
           subText={
             'Bring video and chat front-and-center for minimal distractions.'
           }
-          image={'/screenshot14.png'}
+          image={'/boltzy-logo-large.svg'}
         />
         <Divider horizontal />
         <div

@@ -134,7 +134,7 @@ export const DiscordBot = () => {
             Add to Discord
           </Button>
         }
-        image={'/screenshot5.png'}
+        image={'/boltzy-logo-large.svg'}
       />
     </div>
   );
