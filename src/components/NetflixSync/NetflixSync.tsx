@@ -3,7 +3,6 @@ import {
   Button,
   Modal,
   Header,
-  Content,
   Segment,
   Progress,
   Icon,
@@ -102,7 +101,7 @@ export const NetflixSync: React.FC<NetflixSyncProps> = ({
         Netflix Watch Party
       </Header>
       
-      <Content>
+      <Modal.Content>
         {!syncState.isNetflixMode ? (
           <div className={styles.setupSection}>
             <Message info>
@@ -245,7 +244,7 @@ export const NetflixSync: React.FC<NetflixSyncProps> = ({
             </Segment>
           </div>
         )}
-      </Content>
+      </Modal.Content>
     </Modal>
   );
 };
