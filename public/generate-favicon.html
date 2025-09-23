@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Boltzy Favicon</title>
+</head>
+<body>
+    <canvas id="favicon" width="32" height="32" style="border: 1px solid #ccc;"></canvas>
+    <br>
+    <button onclick="downloadFavicon()">Download Favicon</button>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Draw background circle
+        ctx.fillStyle = '#e50914';
+        ctx.beginPath();
+        ctx.arc(16, 16, 16, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Draw lightning bolt
+        ctx.fillStyle = 'white';
+        ctx.strokeStyle = 'white';
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(8, 4);
+        ctx.lineTo(20, 16);
+        ctx.lineTo(12, 16);
+        ctx.lineTo(16, 28);
+        ctx.lineTo(4, 16);
+        ctx.lineTo(12, 16);
+        ctx.lineTo(8, 4);
+        ctx.fill();
+        ctx.stroke();
+        
+        // Draw video play icon
+        ctx.fillStyle = 'rgba(255,255,255,0.2)';
+        ctx.beginPath();
+        ctx.arc(16, 16, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.moveTo(13, 12);
+        ctx.lineTo(13, 20);
+        ctx.lineTo(20, 16);
+        ctx.lineTo(13, 12);
+        ctx.fill();
+        
+        function downloadFavicon() {
+            const link = document.createElement('a');
+            link.download = 'favicon.ico';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

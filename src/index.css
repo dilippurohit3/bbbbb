@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Netflix-inspired color palette */
+  --primary-red: #e50914;
+  --primary-red-dark: #b81d13;
+  --background-dark: #141414;
+  --background-darker: #0a0a0a;
+  --surface-dark: #1a1a1a;
+  --surface-darker: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #737373;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html body {
+  margin: 0;
+  overflow-y: scroll;
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Modern button styles */
+button.linkButton {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  color: var(--primary-red);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+
+button.linkButton:hover {
+  color: var(--primary-red-dark);
+}
+
+.footerIcon {
+  color: var(--text-secondary);
+  margin-right: 10px;
+  transition: var(--transition-fast);
+}
+
+.footerIcon:hover {
+  color: var(--text-primary);
+}
+
+.toolButton {
+  min-width: 135px;
+  height: 36px;
+  background: var(--surface-darker) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition-fast) !important;
+  font-weight: 500 !important;
+}
+
+.toolButton:hover {
+  background: var(--surface-dark) !important;
+  border-color: var(--primary-red) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.smallText {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.sectionHeader {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: var(--spacing-sm);
+  letter-spacing: 0.5px;
+}
+
+/* Modern card styles */
+.modern-card {
+  background: var(--surface-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: var(--transition-normal);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.modern-card:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+/* Netflix-style buttons */
+.netflix-button {
+  background: var(--primary-red) !important;
+  border: none !important;
+  color: white !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--spacing-sm) var(--spacing-lg) !important;
+  font-weight: 600 !important;
+  transition: var(--transition-fast) !important;
+  text-transform: none !important;
+}
+
+.netflix-button:hover {
+  background: var(--primary-red-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+}
+
+.netflix-button:active {
+  transform: translateY(0);
+}
+
+/* Modern input styles */
+.modern-input {
+  background: var(--surface-darker) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  transition: var(--transition-fast) !important;
+}
+
+.modern-input:focus {
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2) !important;
+  outline: none !important;
+}
+
+.modern-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Override default semantic ui styles */
+.ui .comment {
+  word-break: break-word;
+  background: var(--surface-dark) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  padding: var(--spacing-md) !important;
+  margin: var(--spacing-sm) 0 !important;
+}
+
+.ui.labeled.icon.button > .icon.loading,
+.ui.labeled.icon.buttons > .button > .icon.loading {
+  background-color: initial;
+}
+
+.ui.dropdown .menu[role='listbox'] {
+  z-index: 1001;
+  background: var(--surface-dark) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 8px 24px var(--shadow-color) !important;
+}
+
+.ui.dropdown .menu .item {
+  color: var(--text-primary) !important;
+  transition: var(--transition-fast) !important;
+}
+
+.ui.dropdown .menu .item:hover {
+  background: var(--surface-darker) !important;
+  color: var(--primary-red) !important;
+}
+
+.ui.selection.dropdown.ui.selection.dropdown {
+  min-height: 1em;
+  border: 1px solid var(--border-color) !important;
+  background: var(--surface-darker) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.ui.search.dropdown > .text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  color: var(--text-primary) !important;
+}
+
+.ui.dropdown > .text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  color: var(--text-primary) !important;
+}
+
+.ui.inverted.menu .active.item {
+  border-bottom: 2px solid var(--primary-red);
+  background: inherit;
+  margin-bottom: -2px;
+}
+
+/* Modern modal styles */
+.ui.modal {
+  background: var(--surface-dark) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 16px 48px var(--shadow-color) !important;
+}
+
+.ui.modal > .header {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  font-weight: 600 !important;
+}
+
+.ui.modal > .content {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+/* Modern progress bar */
+.ui.progress {
+  background: var(--surface-darker) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+.ui.progress .bar {
+  background: var(--primary-red) !important;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* Modern message styles */
+.ui.message {
+  background: var(--surface-dark) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-primary) !important;
+}
+
+.ui.message .header {
+  color: var(--text-primary) !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .toolButton {
+    min-width: 120px;
+    height: 32px;
+    font-size: 14px;
+  }
+  
+  .modern-card {
+    padding: var(--spacing-md);
+    margin: var(--spacing-sm);
+  }
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn var(--transition-normal) ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp var(--transition-normal) ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Netflix-style gradient backgrounds */
+.netflix-gradient {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+}
+
+.dark-gradient {
+  background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-darker) 100%);
+}

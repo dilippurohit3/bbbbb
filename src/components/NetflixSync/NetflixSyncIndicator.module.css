@@ -1,0 +1,61 @@
+.indicatorContainer {
+  position: fixed;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-out;
+}
+
+.netflixLabel {
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--radius-lg) !important;
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 16px rgba(229, 9, 20, 0.3) !important;
+  transition: var(--transition-fast) !important;
+}
+
+.netflixLabel:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4) !important;
+}
+
+.netflixLabel .icon {
+  margin-right: var(--spacing-xs) !important;
+}
+
+.netflixLabel .detail {
+  margin-left: var(--spacing-sm) !important;
+  font-size: 0.85rem !important;
+  opacity: 0.9 !important;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .indicatorContainer {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+  }
+  
+  .netflixLabel {
+    padding: var(--spacing-xs) var(--spacing-sm) !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .netflixLabel .detail {
+    font-size: 0.8rem !important;
+  }
+}
