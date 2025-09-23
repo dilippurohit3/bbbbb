@@ -757,7 +757,7 @@ export default class App extends React.Component<AppProps, AppState> {
           this.state.roomPlaybackRate === 0
         ) {
           const leader = this.getLeaderTime();
-          const delta = leader - (data[this.socket.id] || 0);
+          const delta = leader - (data[this.socket.id || ''] || 0);
           // Set leader pbr to 1
           let pbr = 1;
           // Add .01 pbr for each 100ms delay
