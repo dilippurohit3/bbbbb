@@ -17,7 +17,7 @@ export const Home = () => {
           subText={'Including Netflix sync! No registration or download required.'}
           action={
             <div className={styles.heroAction}>
-              <NewRoomButton size="huge" className={styles.heroButton} />
+              <NewRoomButton size="huge" />
             </div>
           }
           image={'/screenshot4.png'}

@@ -104,7 +104,7 @@ export class Chat extends React.Component<ChatProps> {
       msgId: id || this.state.reactionMenu.selectedMsgId,
       msgTimestamp: timestamp || this.state.reactionMenu.selectedMsgTimestamp,
     };
-    if (msg?.reactions?.[value].includes(this.props.socket.id)) {
+    if (msg?.reactions?.[value].includes(this.props.socket.id || '')) {
       this.props.socket.emit('CMD:removeReaction', data);
     } else {
       this.props.socket.emit('CMD:addReaction', data);
@@ -531,7 +531,7 @@ const ChatMessage = ({
                   trigger={
                     <div
                       className={`${classes.reactionContainer} ${
-                        reactions[key].includes(socket.id)
+                        reactions[key].includes(socket.id || '')
                           ? classes.highlighted
                           : ''
                       }`}

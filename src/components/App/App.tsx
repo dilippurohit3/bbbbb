@@ -757,7 +757,7 @@ export default class App extends React.Component<AppProps, AppState> {
           this.state.roomPlaybackRate === 0
         ) {
           const leader = this.getLeaderTime();
-          const delta = leader - data[this.socket.id];
+          const delta = leader - (data[this.socket.id] || 0);
           // Set leader pbr to 1
           let pbr = 1;
           // Add .01 pbr for each 100ms delay
@@ -2548,7 +2548,7 @@ export default class App extends React.Component<AppProps, AppState> {
                     this.getVBrowserPass() &&
                     this.getVBrowserHost() ? (
                       <VBrowser
-                        username={this.socket.id}
+                        username={this.socket.id || 'anonymous'}
                         password={this.getVBrowserPass()}
                         hostname={this.getVBrowserHost()}
                         controlling={this.state.controller === this.socket.id}
