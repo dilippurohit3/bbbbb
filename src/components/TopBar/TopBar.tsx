@@ -50,6 +50,7 @@ export async function createRoom(
 export class NewRoomButton extends React.Component<{
   size?: SemanticSIZES;
   openNewTab?: boolean;
+  className?: string;
 }> {
   static contextType = MetadataContext;
   declare context: React.ContextType<typeof MetadataContext>;
@@ -67,7 +68,7 @@ export class NewRoomButton extends React.Component<{
             icon
             labelPosition="left"
             onClick={this.createRoom}
-            className={this.props.size ? '' : 'toolButton'}
+            className={`${this.props.size ? '' : 'toolButton'} ${this.props.className || ''}`}
             fluid
           >
             <Icon name="certificate" />
