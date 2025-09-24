@@ -10,50 +10,50 @@ import { BoltzyLogo } from '../Logo/BoltzyLogo';
 export const Home = () => {
   const { user } = useContext(MetadataContext);
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.container}>
         <Hero
           heroText={'Watch videos together with friends anywhere.'}
           subText={'Including Netflix sync! No registration or download required.'}
           action={
             <div className={styles.heroAction}>
-              <NewRoomButton size="huge" />
+              <NewRoomButton size="huge" className={styles.heroButton} />
             </div>
           }
           image={'/boltzy-logo-large.svg'}
           logo={<BoltzyLogo size={80} />}
         />
-        <Divider horizontal>
-          <Header inverted as="h4">
-            <Icon name="cogs" />
-            Features
-          </Header>
-        </Divider>
-        <div className={styles.featureSection}>
-          <Feature
-            icon="sync"
-            title="Synchronized Play"
-            text="Starts, stops, and seeks are synchronized to everyone, so take those restroom and snack breaks without worrying about falling behind."
-            className={styles.featureCard}
-          />
-          <Feature
-            icon="conversation"
-            title="Real-time Chat"
-            text="Chat with others in your room. React with emojis and GIFs to share the moment together."
-            className={styles.featureCard}
-          />
-          <Feature
-            icon="list"
-            title="Smart Playlists"
-            text="Set up a whole list of videos to play next, and rearrange to your heart's content."
-            className={styles.featureCard}
-          />
-          <Feature
-            icon="video"
-            title="Video Chat"
-            text="Jump into video chat if you'd rather be face-to-face. See each other's reactions in real-time."
-            className={styles.featureCard}
-          />
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>
+            <Icon name="cogs" className={styles.sectionIcon} />
+            Premium Features
+          </div>
+          <div className={styles.featureSection}>
+            <Feature
+              icon="sync"
+              title="Synchronized Play"
+              text="Starts, stops, and seeks are synchronized to everyone, so take those restroom and snack breaks without worrying about falling behind."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="conversation"
+              title="Real-time Chat"
+              text="Chat with others in your room. React with emojis and GIFs to share the moment together."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="list"
+              title="Smart Playlists"
+              text="Set up a whole list of videos to play next, and rearrange to your heart's content."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="video"
+              title="Video Chat"
+              text="Jump into video chat if you'd rather be face-to-face. See each other's reactions in real-time."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+          </div>
         </div>
         <Hero
           heroText={'React to moments together.'}
@@ -61,43 +61,49 @@ export const Home = () => {
           image={'/boltzy-logo-large.svg'}
           color="green"
         />
-        <Divider horizontal>
-          <Header inverted as="h4">
-            <Icon name="film" />
-            Watch anything together
-          </Header>
-        </Divider>
-        <div className={styles.featureSection}>
-          <Feature
-            icon="desktop"
-            title={`VBrowser`}
-            text="Watch together on a virtual browser running in the cloud."
-          />
-          <Feature
-            icon="youtube"
-            title={`YouTube`}
-            text="Watch videos together from YouTube."
-          />
-          <Feature
-            icon="video"
-            title={`Netflix`}
-            text="Sync Netflix with friends using Rave-style synchronization."
-          />
-          <Feature
-            icon="slideshare"
-            title={`Screensharing`}
-            text="Share a browser tab or your desktop."
-          />
-          <Feature
-            icon="file"
-            title={`File`}
-            text="Upload and stream your own file."
-          />
-          <Feature
-            icon="linkify"
-            title={`URL`}
-            text="Paste in a video URL for everyone to watch from."
-          />
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>
+            <Icon name="film" className={styles.sectionIcon} />
+            Watch Anything Together
+          </div>
+          <div className={styles.featureSection}>
+            <Feature
+              icon="desktop"
+              title={`VBrowser`}
+              text="Watch together on a virtual browser running in the cloud."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="youtube"
+              title={`YouTube`}
+              text="Watch videos together from YouTube."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="video"
+              title={`Netflix`}
+              text="Sync Netflix with friends using Rave-style synchronization."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="slideshare"
+              title={`Screensharing`}
+              text="Share a browser tab or your desktop."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="file"
+              title={`File`}
+              text="Upload and stream your own file."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+            <Feature
+              icon="linkify"
+              title={`URL`}
+              text="Paste in a video URL for everyone to watch from."
+              className={`${styles.featureCard} ${styles.fadeInUp}`}
+            />
+          </div>
         </div>
         <Hero
           heroText={'Theater mode.'}
@@ -106,53 +112,52 @@ export const Home = () => {
           }
           image={'/boltzy-logo-large.svg'}
         />
-        <Divider horizontal />
-        <div
-          style={{
-            padding: '30px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <div className={styles.heroText}>Get started!</div>
-          <div className={styles.featureSection}>
-            <Step.Group style={{ margin: '8px' }}>
-              <Step>
-                <Icon name="certificate" />
-                <Step.Content>
-                  <Step.Title>1.</Step.Title>
-                  <Step.Description>Make a room</Step.Description>
-                </Step.Content>
-              </Step>
-
-              <Step>
-                <Icon name="group" />
-                <Step.Content>
-                  <Step.Title>2.</Step.Title>
-                  <Step.Description>Share link with friends</Step.Description>
-                </Step.Content>
-              </Step>
-
-              <Step>
-                <Icon name="film" />
-                <Step.Content>
-                  <Step.Title>3.</Step.Title>
-                  <Step.Description>Pick something to watch</Step.Description>
-                </Step.Content>
-              </Step>
-
-              <Step>
-                <Icon name="thumbs up outline" />
-                <Step.Content>
-                  <Step.Title>4.</Step.Title>
-                  <Step.Description>Success!</Step.Description>
-                </Step.Content>
-              </Step>
-            </Step.Group>
+        <div className={styles.section}>
+          <div className={styles.sectionTitle}>
+            <Icon name="rocket" className={styles.sectionIcon} />
+            Get Started in 4 Simple Steps
           </div>
-          <div style={{ width: '160px' }}>
-            <NewRoomButton />
+          <div className={styles.stepsContainer}>
+            <div className={styles.stepsGrid}>
+              <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
+                <div className={styles.stepIcon}>
+                  <Icon name="certificate" />
+                </div>
+                <div className={styles.stepNumber}>1</div>
+                <div className={styles.stepTitle}>Make a room</div>
+                <div className={styles.stepDescription}>Create your private viewing space</div>
+              </div>
+              
+              <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
+                <div className={styles.stepIcon}>
+                  <Icon name="group" />
+                </div>
+                <div className={styles.stepNumber}>2</div>
+                <div className={styles.stepTitle}>Share with friends</div>
+                <div className={styles.stepDescription}>Send the link to your friends</div>
+              </div>
+              
+              <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
+                <div className={styles.stepIcon}>
+                  <Icon name="film" />
+                </div>
+                <div className={styles.stepNumber}>3</div>
+                <div className={styles.stepTitle}>Pick content</div>
+                <div className={styles.stepDescription}>Choose what to watch together</div>
+              </div>
+              
+              <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
+                <div className={styles.stepIcon}>
+                  <Icon name="thumbs up outline" />
+                </div>
+                <div className={styles.stepNumber}>4</div>
+                <div className={styles.stepTitle}>Enjoy together!</div>
+                <div className={styles.stepDescription}>Start watching and chatting</div>
+              </div>
+            </div>
+            <div className={styles.ctaContainer}>
+              <NewRoomButton size="huge" className={styles.heroButton} />
+            </div>
           </div>
         </div>
       </div>

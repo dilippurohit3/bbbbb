@@ -216,6 +216,126 @@
   background-clip: text;
 }
 
+/* Section styling */
+.section {
+  margin: var(--spacing-xl) 0;
+  padding: 0 var(--spacing-lg);
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionIcon {
+  font-size: 2rem !important;
+  color: var(--primary-red) !important;
+}
+
+/* Steps styling */
+.stepsContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.stepCard {
+  background: var(--surface-dark);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
+  transform: scaleX(0);
+  transition: var(--transition-normal);
+}
+
+.stepCard:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--shadow-color);
+}
+
+.stepCard:hover::before {
+  transform: scaleX(1);
+}
+
+.stepIcon {
+  font-size: 2.5rem;
+  color: var(--primary-red);
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.stepNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-bottom: var(--spacing-sm);
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stepDescription {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ctaContainer {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+}
+
+/* Enhanced hero action */
+.heroAction {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+}
+
 /* Modern spacing utilities */
 .mt-sm { margin-top: var(--spacing-sm); }
 .mt-md { margin-top: var(--spacing-md); }
