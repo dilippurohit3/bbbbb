@@ -1012,13 +1012,16 @@ export class Room {
       try {
         if (stateless) {
           const pass = crypto.randomUUID();
+          console.log('[VBROWSER] Starting VM...');
           const id = await stateless.startVM(pass);
+          console.log('[VBROWSER] VM started with ID:', id);
           assignment = {
             ...(await stateless.getVM(id)),
             pass,
             assignTime: Date.now(),
           };
         } else {
+          console.log('[VBROWSER] Using VM worker...');
           const { data } = await axios.post<AssignedVM>(
             'http://localhost:' + config.VMWORKER_PORT + '/assignVM',
             {
@@ -1031,7 +1034,10 @@ export class Room {
           assignment = data;
         }
       } catch (e) {
-        console.warn(e);
+        console.error('[VBROWSER] Error starting VM:', e);
+        // If VBrowser fails, we can still continue with the room
+        // The user can use other features like YouTube, file upload, etc.
+        console.log('[VBROWSER] VBrowser unavailable, other features still work');
       }
       if (assignment) {
         this.vBrowser = assignment;

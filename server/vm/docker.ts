@@ -17,6 +17,44 @@ export class Docker extends VMManager {
   ssh: NodeSSH | undefined = undefined;
   imageId = imageName;
 
+  getSSHKey = () => {
+    const sshKeyPath = homedir() + '/.ssh/id_rsa';
+    try {
+      if (fs.existsSync(sshKeyPath)) {
+        return fs.readFileSync(sshKeyPath).toString();
+      } else {
+        console.log('[VBROWSER] SSH key not found, generating temporary key...');
+        // Generate a temporary SSH key for development
+        return this.generateTempSSHKey();
+      }
+    } catch (error) {
+      console.log('[VBROWSER] Error reading SSH key, using temporary key...');
+      return this.generateTempSSHKey();
+    }
+  };
+
+  generateTempSSHKey = () => {
+    // Generate a temporary SSH key for development
+    const { execSync } = require('child_process');
+    try {
+      // Create .ssh directory if it doesn't exist
+      const sshDir = homedir() + '/.ssh';
+      if (!fs.existsSync(sshDir)) {
+        fs.mkdirSync(sshDir, { mode: 0o700 });
+      }
+      
+      // Generate SSH key
+      execSync(`ssh-keygen -t rsa -b 4096 -f ${sshDir}/id_rsa -N ""`, { stdio: 'ignore' });
+      
+      // Read the generated key
+      return fs.readFileSync(sshDir + '/id_rsa').toString();
+    } catch (error) {
+      console.log('[VBROWSER] Could not generate SSH key, VBrowser may not work properly');
+      // Return a dummy key to prevent crashes
+      return '-----BEGIN OPENSSH PRIVATE KEY-----\ndummy-key\n-----END OPENSSH PRIVATE KEY-----';
+    }
+  };
+
   getSSH = async () => {
     if (this.ssh && this.ssh.isConnected()) {
       return this.ssh;
@@ -27,7 +65,7 @@ export class Docker extends VMManager {
       // The private key the Docker host is configured to accept
       privateKey: config.DOCKER_VM_HOST_SSH_KEY_BASE64
         ? Buffer.from(config.DOCKER_VM_HOST_SSH_KEY_BASE64, 'base64').toString()
-        : fs.readFileSync(homedir() + '/.ssh/id_rsa').toString(),
+        : this.getSSHKey(),
     };
     this.ssh = new NodeSSH();
     await this.ssh.connect(sshConfig);
