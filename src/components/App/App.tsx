@@ -2548,7 +2548,7 @@ export default class App extends React.Component<AppProps, AppState> {
                     this.getVBrowserPass() &&
                     this.getVBrowserHost() ? (
                       <VBrowser
-                        username={this.socket.id || 'anonymous'}
+                        username={'Boltzy'}
                         password={this.getVBrowserPass()}
                         hostname={this.getVBrowserHost()}
                         controlling={this.state.controller === this.socket.id}
@@ -2797,7 +2797,7 @@ export default class App extends React.Component<AppProps, AppState> {
                     transition: 'height ease-out 0.5s',
                   }}
                 >
-                  {this.state.state === 'connected' && (
+                  {this.state.state === 'connected' && config.VITE_ENABLE_VIDEOCHAT && (
                     <VideoChat
                       socket={this.socket}
                       participants={this.state.participants}

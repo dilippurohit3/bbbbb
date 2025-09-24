@@ -1,16 +1,18 @@
 export default {
   VITE_SERVER_HOST: import.meta.env.VITE_SERVER_HOST,
   VITE_OAUTH_REDIRECT_HOSTNAME:
-    import.meta.env.VITE_OAUTH_REDIRECT_HOSTNAME ?? 'https://www.boltzy.me',
+    import.meta.env.VITE_OAUTH_REDIRECT_HOSTNAME ?? 'http://automation.ecomtrix.me',
   VITE_FIREBASE_CONFIG:
     import.meta.env.VITE_FIREBASE_CONFIG ??
-    '{"apiKey":"AIzaSyA2fkXeFokJ-Ei_jnzDso5AmjbIaMdzuEc","authDomain":"boltzy-273604.firebaseapp.com","databaseURL":"https://boltzy-273604.firebaseio.com","projectId":"boltzy-273604","storageBucket":"boltzy-273604.appspot.com","messagingSenderId":"769614672795","appId":"1:769614672795:web:54bbda86288ab1a034273e"}',
+    '{"apiKey":"AIzaSyCmn-v4KPcGiXeftvoTnUbmxQNHYZT-vNc","authDomain":"boltzy-watchparty.firebaseapp.com","pro>
   VITE_STRIPE_PUBLIC_KEY:
     import.meta.env.VITE_STRIPE_PUBLIC_KEY ??
     'pk_live_eVMbIifj5lnvgBleBCRaCv4E00aeXQkPxQ',
   VITE_RECAPTCHA_SITE_KEY:
     import.meta.env.VITE_RECAPTCHA_SITE_KEY ??
     '6LeDGP4UAAAAAGYZZenyU-3fRdhL3p0BaBmiK9mM',
-  VITE_FIREBASE_SIGNIN_METHODS: 'facebook,google,email',
+  VITE_FIREBASE_SIGNIN_METHODS: 'google,email',
   NODE_ENV: import.meta.env.DEV ? 'development' : 'production',
 };
+
+
