@@ -20,7 +20,7 @@ export const Home = () => {
               <NewRoomButton size="huge" className={styles.heroButton} />
             </div>
           }
-          image={'/boltzy-logo-large.svg'}
+          image={'/hero-watch-together.svg'}
           logo={<BoltzyLogo size={80} />}
         />
         <div className={styles.section}>
@@ -58,7 +58,7 @@ export const Home = () => {
         <Hero
           heroText={'React to moments together.'}
           subText={"Find moments of shared joy even when you're apart."}
-          image={'/boltzy-logo-large.svg'}
+          image={'/hero-react-together.svg'}
           color="green"
         />
         <div className={styles.section}>
@@ -110,7 +110,7 @@ export const Home = () => {
           subText={
             'Bring video and chat front-and-center for minimal distractions.'
           }
-          image={'/boltzy-logo-large.svg'}
+          image={'/hero-theater-mode.svg'}
         />
         <div className={styles.section}>
           <div className={styles.sectionTitle}>

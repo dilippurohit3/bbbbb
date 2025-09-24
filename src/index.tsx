@@ -6,7 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import App from './components/App';
 import { Home } from './components/Home';
-import { Privacy, Terms, FAQ, DiscordBot } from './components/Pages/Pages';
+import { Privacy, Terms, FAQ, DiscordBot, About } from './components/Pages/Pages';
 import { TopBar } from './components/TopBar/TopBar';
 import { Footer } from './components/Footer/Footer';
 import firebase from 'firebase/compat/app';
@@ -115,6 +115,11 @@ class WatchParty extends React.Component {
           <Route path="/discordBot">
             <TopBar />
             <DiscordBot />
+            <Footer />
+          </Route>
+          <Route path="/about">
+            <TopBar />
+            <About />
             <Footer />
           </Route>
           <Route path="/discord/auth" exact>
