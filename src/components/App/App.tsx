@@ -2444,7 +2444,7 @@ export default class App extends React.Component<AppProps, AppState> {
                         !sharer &&
                         !this.playingVBrowser() && (
                           <Popup
-                            content="Open Netflix in Virtual Browser (like Rave)"
+                            content="Start Netflix sync session"
                             trigger={
                               <Button
                                 fluid
@@ -2454,8 +2454,9 @@ export default class App extends React.Component<AppProps, AppState> {
                                 labelPosition="left"
                                 color="red"
                                 onClick={() => {
-                                  // Open Netflix directly in VBrowser like Rave does
-                                  this.roomSetMedia('https://www.netflix.com');
+                                  this.setState({
+                                    isNetflixModalOpen: true,
+                                  });
                                 }}
                               >
                                 <Icon name="video" />

@@ -105,29 +105,32 @@ export const NetflixSync: React.FC<NetflixSyncProps> = ({
         {!syncState.isNetflixMode ? (
           <div className={styles.setupSection}>
             <Message info>
-              <Message.Header>How Netflix Sync Works</Message.Header>
+              <Message.Header>🎬 How to Watch Netflix Together</Message.Header>
               <Message.List>
-                <Message.Item>Each person needs their own Netflix account</Message.Item>
-                <Message.Item>We'll sync playback controls, not stream video</Message.Item>
-                <Message.Item>Everyone watches on their own Netflix tab</Message.Item>
-                <Message.Item>Use our controls to stay synchronized</Message.Item>
+                <Message.Item><strong>Step 1:</strong> Everyone opens Netflix in their own browser tab</Message.Item>
+                <Message.Item><strong>Step 2:</strong> Navigate to the same movie/show we're watching</Message.Item>
+                <Message.Item><strong>Step 3:</strong> Click "Ready" when you're at the right content</Message.Item>
+                <Message.Item><strong>Step 4:</strong> Use our sync controls to stay synchronized</Message.Item>
               </Message.List>
             </Message>
 
             <Form>
               <Form.Field>
-                <Label>Netflix Video URL</Label>
+                <Label>🎬 What are we watching?</Label>
                 <Input
-                  placeholder="https://netflix.com/watch/12345"
+                  placeholder="Enter the Netflix URL or just the movie/show name"
                   value={videoUrl}
                   onChange={(e) => setVideoUrl(e.target.value)}
                 />
+                <small style={{color: '#999', marginTop: '5px', display: 'block'}}>
+                  💡 Tip: You can just type the movie name (e.g., "Stranger Things") or paste the full Netflix URL
+                </small>
               </Form.Field>
               
               <Form.Field>
-                <Label>Video Title (Optional)</Label>
+                <Label>📺 Video Title (Optional)</Label>
                 <Input
-                  placeholder="Movie or Show Title"
+                  placeholder="e.g., Stranger Things Season 4"
                   value={videoTitle}
                   onChange={(e) => setVideoTitle(e.target.value)}
                 />
@@ -140,7 +143,8 @@ export const NetflixSync: React.FC<NetflixSyncProps> = ({
                 onClick={handleStartSession}
                 disabled={!videoUrl.trim()}
                 icon="play"
-                content="Start Netflix Session"
+                content="🎬 Start Netflix Watch Party"
+                size="large"
               />
             </div>
           </div>
