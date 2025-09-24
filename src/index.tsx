@@ -6,14 +6,13 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import App from './components/App';
 import { Home } from './components/Home';
-import { Privacy, Terms, FAQ, DiscordBot, About } from './components/Pages/Pages';
+import { Privacy, Terms, FAQ, About } from './components/Pages/Pages';
 import { TopBar } from './components/TopBar/TopBar';
 import { Footer } from './components/Footer/Footer';
 import firebase from 'firebase/compat/app';
 import 'firebase/auth';
 import { serverPath } from './utils';
 import { Create } from './components/Create/Create';
-import { Discord } from './components/Discord/Discord';
 import 'semantic-ui-css/semantic.min.css';
 import config from './config';
 import { DEFAULT_STATE, MetadataContext } from './MetadataContext';
@@ -31,7 +30,7 @@ if (window.location.hash && window.location.pathname === '/') {
   window.location.href = '/watch/' + hashRoomId;
 }
 
-class WatchParty extends React.Component {
+class Boltzy extends React.Component {
   public state = DEFAULT_STATE;
   async componentDidMount() {
     if (firebaseConfig) {
@@ -112,18 +111,10 @@ class WatchParty extends React.Component {
             <FAQ />
             <Footer />
           </Route>
-          <Route path="/discordBot">
-            <TopBar />
-            <DiscordBot />
-            <Footer />
-          </Route>
           <Route path="/about">
             <TopBar />
             <About />
             <Footer />
-          </Route>
-          <Route path="/discord/auth" exact>
-            <Discord />
           </Route>
           <Route path="/debug">
             <TopBar />
@@ -140,4 +131,4 @@ class WatchParty extends React.Component {
 }
 const container = document.getElementById('root');
 const root = createRoot(container!);
-root.render(<WatchParty />);
+root.render(<Boltzy />);

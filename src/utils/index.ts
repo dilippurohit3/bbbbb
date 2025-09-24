@@ -242,7 +242,7 @@ export const iceServers = () => [
   },
   // {
   //   urls: 'turn:numb.viagenie.ca',
-  //   credential: 'watchparty',
+  //   credential: 'boltzy',
   //   username: 'howardzchung@gmail.com',
   // },
 ];
@@ -340,12 +340,12 @@ export async function openFileSelector(accept?: string) {
 }
 
 export function getOrCreateClientId() {
-  let clientId = window.localStorage.getItem('watchparty-clientid');
+  let clientId = window.localStorage.getItem('boltzy-clientid');
   if (!clientId) {
     // Generate a new clientID and save it
     // This requires https, so fallback to JS implementation if needed
     clientId = createUuid();
-    window.localStorage.setItem('watchparty-clientid', clientId);
+    window.localStorage.setItem('boltzy-clientid', clientId);
   }
   return clientId;
 }

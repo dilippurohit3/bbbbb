@@ -10,7 +10,7 @@ export const PasswordModal = ({
 }) => {
   const setPassword = useCallback(() => {
     window.localStorage.setItem(
-      'watchparty-passwords',
+      'boltzy-passwords',
       JSON.stringify({
         ...savedPasswords,
         [roomId]: (document.getElementById('roomPassword') as HTMLInputElement)

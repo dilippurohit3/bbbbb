@@ -416,7 +416,7 @@ const ChatMessage = ({
           disabled={!Boolean(owner && owner === user?.uid)}
           trigger={
             <Comment.Author
-              title={isSub ? 'WatchParty Plus subscriber' : ''}
+              title={isSub ? 'Boltzy Plus subscriber' : ''}
               as="a"
               className={isSub ? classes.subscriber : styles.light}
             >

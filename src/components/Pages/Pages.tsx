@@ -62,7 +62,7 @@ We do not sell, trade, or rent your personal information to third parties. We ma
 
 For privacy-related questions or requests, contact us at:
 - Email: privacy@boltzy.me
-- Address: Gravitech LLC, Privacy Department
+- Address: OpclaimerakaLinX, Privacy Department
 
 ## Changes to This Policy
 
@@ -161,11 +161,11 @@ By accessing or using Boltzy, you agree to be bound by these Terms of Service an
 
 For questions about these terms, contact us at:
 - Email: legal@boltzy.me
-- Address: Gravitech LLC, Legal Department
+- Address: OpclaimerakaLinX, Legal Department
 
 ## Governing Law
 
-These terms are governed by the laws of the jurisdiction where Gravitech LLC is incorporated.
+These terms are governed by the laws of the jurisdiction where OpclaimerakaLinX is incorporated.
 `}
       </ReactMarkdown>
     </div>
@@ -261,39 +261,14 @@ Contact us at support@boltzy.me with details about the issue you're experiencing
 ### Can I request a feature?
 Absolutely! We love hearing from our users. Send feature requests to feedback@boltzy.me.
 
-### Is there a Discord community?
-Yes! Join our Discord server for community support, updates, and to connect with other users.
+### Is there a community?
+Yes! Join our community for support, updates, and to connect with other users. Contact us at admin@boltzy.me for community access.
 `}
       </ReactMarkdown>
     </div>
   );
 };
 
-export const DiscordBot = () => {
-  return (
-    <div>
-      <Hero
-        heroText={
-          'Add the Boltzy Discord bot to your server for instant room creation.'
-        }
-        subText={'/watch to generate a new empty room'}
-        subText2={'/watch video <URL_HERE> to create a room with a video'}
-        action={
-          <Button
-            style={{ marginTop: '1em' }}
-            color="blue"
-            size="big"
-            target="_blank"
-            href="https://discord.com/api/oauth2/authorize?client_id=1071394728513380372&permissions=2147485696&scope=bot"
-          >
-            Add to Discord
-          </Button>
-        }
-        image={'/hero-watch-together.svg'}
-      />
-    </div>
-  );
-};
 
 export const About = () => {
   return (
@@ -342,7 +317,7 @@ Boltzy was born from the need to stay connected during challenging times. When p
 
 ## The Team
 
-Boltzy is developed by **Gravitech LLC**, a technology company focused on creating innovative solutions for digital communication and entertainment.
+Boltzy is developed by **OpclaimerakaLinX**, a technology company focused on creating innovative solutions for digital communication and entertainment.
 
 ### Our Values
 
@@ -353,7 +328,7 @@ Boltzy is developed by **Gravitech LLC**, a technology company focused on creati
 
 ## Join the Community
 
-- **Discord**: Join our community server for support and updates
+- **Community**: Join our community for support and updates
 - **GitHub**: Contribute to our open-source components
 - **Twitter**: Follow us for the latest news and features
 

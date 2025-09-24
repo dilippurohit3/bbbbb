@@ -26,6 +26,6 @@ export const Footer = () => (
       Discord Bot
     </Link>
     {' · '}
-    <span>Gravitech LLC</span>
+    <span>OpclaimerakaLinX</span>
   </div>
 );

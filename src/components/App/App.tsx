@@ -70,7 +70,7 @@ declare global {
   interface Window {
     onYouTubeIframeAPIReady: any;
     YT: YT.JsApi;
-    watchparty: {
+    boltzy: {
       ourStream: MediaStream | undefined;
       videoRefs: HTMLVideoElementDict;
       videoPCs: PCDict;
@@ -79,7 +79,7 @@ declare global {
   }
 }
 
-window.watchparty = {
+window.boltzy = {
   ourStream: undefined,
   videoRefs: {},
   videoPCs: {},
@@ -184,7 +184,7 @@ export default class App extends React.Component<AppProps, AppState> {
     tsMap: {},
     nameMap: {},
     pictureMap: {},
-    myName: window.localStorage.getItem('watchparty-username') ?? '',
+    myName: window.localStorage.getItem('boltzy-username') ?? '',
     myPicture: '',
     loading: true,
     scrollTimestamp: 0,
@@ -232,14 +232,14 @@ export default class App extends React.Component<AppProps, AppState> {
       ? true
       : Boolean(
           Number(
-            window.localStorage.getItem('watchparty-showchatcolumn') ?? '1',
+            window.localStorage.getItem('boltzy-showchatcolumn') ?? '1',
           ),
         ),
     showPeopleColumn: isMobile()
       ? true
       : Boolean(
           Number(
-            window.localStorage.getItem('watchparty-showpeoplecolumn') ?? '0',
+            window.localStorage.getItem('boltzy-showpeoplecolumn') ?? '0',
           ),
         ),
     owner: undefined,
@@ -338,7 +338,7 @@ export default class App extends React.Component<AppProps, AppState> {
     let password = '';
     try {
       const savedPasswordsString = window.localStorage.getItem(
-        'watchparty-passwords',
+        'boltzy-passwords',
       );
       const savedPasswords = JSON.parse(savedPasswordsString || '{}');
       this.setState({ savedPasswords });
@@ -526,22 +526,22 @@ export default class App extends React.Component<AppProps, AppState> {
             const WebTorrent = //@ts-ignore
               (await import('webtorrent/dist/webtorrent.min.js')).default;
             //@ts-ignore
-            window.watchparty.webtorrent?._server?.close();
-            window.watchparty.webtorrent?.destroy();
-            window.watchparty.webtorrent = new WebTorrent();
+            window.boltzy.webtorrent?._server?.close();
+            window.boltzy.webtorrent?.destroy();
+            window.boltzy.webtorrent = new WebTorrent();
             await navigator.serviceWorker?.register('/sw.min.js');
             const controller = await navigator.serviceWorker.ready;
             await new Promise((resolve) => setTimeout(resolve, 500));
             console.log(controller, controller.active?.state);
             // createServer is only in v2, types are outdated
             //@ts-ignore
-            const server = await window.watchparty.webtorrent.createServer({
+            const server = await window.boltzy.webtorrent.createServer({
               controller,
             });
             console.log(server);
             await new Promise((resolve) => setTimeout(resolve, 500));
             await new Promise((resolve) => {
-              window.watchparty.webtorrent?.add(
+              window.boltzy.webtorrent?.add(
                 src,
                 {
                   announce: [
@@ -675,7 +675,7 @@ export default class App extends React.Component<AppProps, AppState> {
           }
           if (isMagnet(currentMedia)) {
             this.progressUpdater = window.setInterval(async () => {
-              const client = window.watchparty.webtorrent;
+              const client = window.boltzy.webtorrent;
               if (client) {
                 this.setState({
                   downloaded: client.torrents[0]?.downloaded,
@@ -930,10 +930,10 @@ export default class App extends React.Component<AppProps, AppState> {
         // Don't update the username if the user wants to customize their own
         // Set a flag in localstorage so we only update this once, if the user changes name manually later we won't overwrite
         // Clear the flag on logout
-        if (!window.localStorage.getItem('watchparty-loginname')) {
+        if (!window.localStorage.getItem('boltzy-loginname')) {
           this.updateName(firstName);
           window.localStorage.setItem(
-            'watchparty-loginname',
+            'boltzy-loginname',
             Date.now().toString(),
           );
         }
@@ -1855,7 +1855,7 @@ export default class App extends React.Component<AppProps, AppState> {
   updateName = (name: string) => {
     this.setState({ myName: name });
     this.socket.emit('CMD:name', name);
-    window.localStorage.setItem('watchparty-username', name);
+    window.localStorage.setItem('boltzy-username', name);
   };
 
   updatePicture = (url: string) => {
@@ -2132,7 +2132,7 @@ export default class App extends React.Component<AppProps, AppState> {
         />
         {
           <div
-            className={styles.mobileStack}
+            className={`${styles.mobileStack} ${styles.roomContainer}`}
             style={{ margin: '0 8px', display: 'flex', columnGap: '32px' }}
           >
             <div
@@ -2646,7 +2646,7 @@ export default class App extends React.Component<AppProps, AppState> {
                       showChatColumn: newVal,
                     });
                     window.localStorage.setItem(
-                      'watchparty-showchatcolumn',
+                      'boltzy-showchatcolumn',
                       Number(newVal).toString(),
                     );
                   }}
@@ -2756,7 +2756,7 @@ export default class App extends React.Component<AppProps, AppState> {
                       const newVal = !this.state.showPeopleColumn;
                       this.setState({ showPeopleColumn: newVal });
                       window.localStorage.setItem(
-                        'watchparty-showpeoplecolumn',
+                        'boltzy-showpeoplecolumn',
                         Number(newVal).toString(),
                       );
                     }}

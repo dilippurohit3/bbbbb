@@ -7,7 +7,7 @@ export const SettingsModal = ({ trigger }: any) => (
     <Modal.Content>
       <Form>
         <TextArea rows={10} id="settings_textarea">
-          {window.localStorage.getItem('watchparty-setting') ||
+          {window.localStorage.getItem('boltzy-setting') ||
             JSON.stringify(getDefaultSettings(), null, 2)}
         </TextArea>
       </Form>
@@ -41,7 +41,7 @@ export function getDefaultSettings(): Settings {
 }
 
 export function getCurrentSettings(): Settings {
-  const setting = window.localStorage.getItem('watchparty-setting');
+  const setting = window.localStorage.getItem('boltzy-setting');
   try {
     let settings = validateSettingsString(setting);
     if (!settings) {
@@ -72,5 +72,5 @@ export function validateSettingsString(
 }
 
 export function updateSettings(newSetting: string) {
-  window.localStorage.setItem('watchparty-setting', newSetting);
+  window.localStorage.setItem('boltzy-setting', newSetting);
 }

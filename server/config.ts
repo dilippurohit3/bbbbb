@@ -47,10 +47,7 @@ const defaults = {
   SUBSCRIBER_ROOM_LIMIT: 20, // The maximum number of rooms a subscriber can have
   VMWORKER_PORT: 3100, // Port to use for the vmWorker HTTP server
   VM_ASSIGNMENT_TIMEOUT: 75, // Number of seconds to wait for a VM before failing
-  DISCORD_BOT_TOKEN: '', // Token for the Discord bot that generates Boltzy links
-  DISCORD_ADMIN_BOT_TOKEN: '', // Optional, for Discord bot to set subscriber roles
-  DISCORD_ADMIN_BOT_SERVER_ID: '708181150220156929', // Optional, ID of the Discord server
-  DISCORD_ADMIN_BOT_SUB_ROLE_ID: '722202622345609246', // Optional, ID of subscriber role
+  // Discord bot integration removed
   MEDIASOUP_SERVER: '', // Optional, URL of the MediaSoup server to broadcast to for larger screen/file shares
   TWITCH_PROXY_PATH: '', // Optional, URL of the server that can proxy twitch HLS stream playlists and segments
   VBROWSER_ADMIN_KEY: '', // Optional, the key to hit admin endpoints on the vbrowser

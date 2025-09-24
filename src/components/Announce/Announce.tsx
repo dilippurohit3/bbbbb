@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react';
 import styles from './Announce.module.css';
 import config from '../../config';
 
-const GITHUB_REPO = 'howardchung/watchparty-announcements';
+const GITHUB_REPO = 'howardchung/boltzy-announcements';
 
 type Issue = {
   title: string;

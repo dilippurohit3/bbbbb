@@ -53,7 +53,7 @@ export class VideoChat extends React.Component<VideoChatProps> {
     // Handle messages received from signaling server
     const msg = data.msg;
     const from = data.from;
-    const pc = window.watchparty.videoPCs[from];
+    const pc = window.boltzy.videoPCs[from];
     console.log('recv', from, data);
     if (msg.ice !== undefined) {
       pc.addIceCandidate(new RTCIceCandidate(msg.ice));
@@ -99,20 +99,20 @@ export class VideoChat extends React.Component<VideoChatProps> {
         console.warn(e);
       }
     }
-    window.watchparty.ourStream = stream;
+    window.boltzy.ourStream = stream;
     // alert server we've joined video chat
     this.socket.emit('CMD:joinVideo');
     this.emitUserMute();
   };
 
   stopWebRTC = () => {
-    const ourStream = window.watchparty.ourStream;
-    const videoPCs = window.watchparty.videoPCs;
+    const ourStream = window.boltzy.ourStream;
+    const videoPCs = window.boltzy.videoPCs;
     ourStream &&
       ourStream.getTracks().forEach((track) => {
         track.stop();
       });
-    window.watchparty.ourStream = undefined;
+    window.boltzy.ourStream = undefined;
     Object.keys(videoPCs).forEach((key) => {
       videoPCs[key].close();
       delete videoPCs[key];
@@ -121,7 +121,7 @@ export class VideoChat extends React.Component<VideoChatProps> {
   };
 
   toggleVideoWebRTC = () => {
-    const ourStream = window.watchparty.ourStream;
+    const ourStream = window.boltzy.ourStream;
     if (ourStream && ourStream.getVideoTracks()[0]) {
       ourStream.getVideoTracks()[0].enabled =
         !ourStream.getVideoTracks()[0]?.enabled;
@@ -130,12 +130,12 @@ export class VideoChat extends React.Component<VideoChatProps> {
   };
 
   getVideoWebRTC = () => {
-    const ourStream = window.watchparty.ourStream;
+    const ourStream = window.boltzy.ourStream;
     return ourStream && ourStream.getVideoTracks()[0]?.enabled;
   };
 
   toggleAudioWebRTC = () => {
-    const ourStream = window.watchparty.ourStream;
+    const ourStream = window.boltzy.ourStream;
     if (ourStream && ourStream.getAudioTracks()[0]) {
       ourStream.getAudioTracks()[0].enabled =
         !ourStream.getAudioTracks()[0]?.enabled;
@@ -145,7 +145,7 @@ export class VideoChat extends React.Component<VideoChatProps> {
   };
 
   getAudioWebRTC = () => {
-    const ourStream = window.watchparty.ourStream;
+    const ourStream = window.boltzy.ourStream;
     return (
       ourStream &&
       ourStream.getAudioTracks()[0] &&
@@ -154,9 +154,9 @@ export class VideoChat extends React.Component<VideoChatProps> {
   };
 
   updateWebRTC = () => {
-    const ourStream = window.watchparty.ourStream;
-    const videoPCs = window.watchparty.videoPCs;
-    const videoRefs = window.watchparty.videoRefs;
+    const ourStream = window.boltzy.ourStream;
+    const videoPCs = window.boltzy.videoPCs;
+    const videoRefs = window.boltzy.videoRefs;
     if (!ourStream) {
       // We haven't started video chat, exit
       return;
@@ -228,8 +228,8 @@ export class VideoChat extends React.Component<VideoChatProps> {
   render() {
     const { participants, pictureMap, nameMap, tsMap, socket, owner } =
       this.props;
-    const ourStream = window.watchparty.ourStream;
-    const videoRefs = window.watchparty.videoRefs;
+    const ourStream = window.boltzy.ourStream;
+    const videoRefs = window.boltzy.videoRefs;
     const videoChatContentStyle = {
       height: participants.length <= 3 ? 200 : 100,
       borderRadius: '4px',

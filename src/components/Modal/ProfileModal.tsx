@@ -17,7 +17,6 @@ export class ProfileModal extends React.Component<{
     resetDisabled: false,
     verifyDisabled: false,
     deleteConfirmOpen: false,
-    linkedDiscord: null as null | LinkAccount,
   };
 
   async componentDidMount() {
@@ -31,13 +30,12 @@ export class ProfileModal extends React.Component<{
         }),
     );
     const data: LinkAccount[] = await response.json();
-    const linkedDiscord = data.find((d) => d.kind === 'discord');
-    this.setState({ linkedDiscord });
+    // Discord integration removed
   }
 
   onSignOut = () => {
     firebase.auth().signOut();
-    window.localStorage.removeItem('watchparty-loginname');
+    window.localStorage.removeItem('boltzy-loginname');
     window.location.reload();
   };
 
@@ -79,32 +77,9 @@ export class ProfileModal extends React.Component<{
     window.location.reload();
   };
 
-  authDiscord = () => {
-    const url = `https://discord.com/api/oauth2/authorize?client_id=1071707916719095908&redirect_uri=${encodeURIComponent(
-      config.VITE_OAUTH_REDIRECT_HOSTNAME,
-    )}%2Fdiscord%2Fauth&response_type=token&scope=identify`;
-    window.open(
-      url,
-      '_blank',
-      'toolbar=0,location=0,menubar=0,width=450,height=900',
-    );
-  };
+  // Discord authentication removed
 
-  deleteDiscord = async () => {
-    const token = await this.context.user?.getIdToken();
-    await window.fetch(serverPath + '/linkAccount', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        uid: this.context.user?.uid,
-        token,
-        kind: 'discord',
-      }),
-    });
-    window.location.reload();
-  };
+  // Discord integration removed
 
   render() {
     const { close, userImage } = this.props;
@@ -126,7 +101,7 @@ export class ProfileModal extends React.Component<{
             <p>
               Note: If you have an active subscription, deleting your account
               will NOT automatically cancel it and you will need to contact
-              support@watchparty.me to cancel.
+              support@boltzy.me to cancel.
             </p>
           </Modal.Content>
           <Modal.Actions>
@@ -194,38 +169,7 @@ export class ProfileModal extends React.Component<{
               Verify Email
             </Button>
             {this.context.isSubscriber && <ManageSubButton />}
-            {this.state.linkedDiscord ? (
-              <Button
-                icon
-                labelPosition="left"
-                fluid
-                color="red"
-                animated="fade"
-                onClick={this.deleteDiscord}
-              >
-                <Icon name="discord" />
-                Unlink Discord {this.state.linkedDiscord.accountname}#
-                {this.state.linkedDiscord.discriminator}
-              </Button>
-            ) : (
-              <React.Fragment>
-                <Popup
-                  content="Link your Discord account to automatically receive your Subscriber role if you're subscribed"
-                  trigger={
-                    <Button
-                      icon
-                      labelPosition="left"
-                      fluid
-                      color="orange"
-                      onClick={this.authDiscord}
-                    >
-                      <Icon name="discord" />
-                      Link Discord Account
-                    </Button>
-                  }
-                />
-              </React.Fragment>
-            )}
+            {/* Discord integration removed */}
             <Button
               disabled={this.state.resetDisabled}
               icon

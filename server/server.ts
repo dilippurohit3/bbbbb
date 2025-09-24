@@ -156,7 +156,7 @@ app.get('/downloadSubtitles', async (req, res) => {
       url: 'https://api.opensubtitles.com/api/v1/download',
       method: 'POST',
       headers: {
-        'User-Agent': 'watchparty v1',
+        'User-Agent': 'Boltzy v1',
         'Api-Key': config.OPENSUBTITLES_KEY,
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -222,7 +222,7 @@ app.get('/searchSubtitles', async (req, res) => {
     // Up to 10 downloads per IP per day, but proxyable and doesn't require key
     const response = await axios.get(subUrl, {
       headers: {
-        'User-Agent': 'watchparty v1',
+        'User-Agent': 'Boltzy v1',
         'Api-Key': config.OPENSUBTITLES_KEY,
       },
     });
@@ -512,35 +512,8 @@ app.post('/linkAccount', async (req, res) => {
     return;
   }
   const kind = req.body?.kind;
-  if (kind === 'discord') {
-    const tokenType = req.body?.tokenType;
-    const accessToken = req.body.accessToken;
-    // Get the token and verify the user
-    const response = await axios.get('https://discord.com/api/users/@me', {
-      headers: {
-        authorization: `${tokenType} ${accessToken}`,
-      },
-    });
-    const accountid = response.data.id;
-    const accountname = response.data.username;
-    const discriminator = response.data.discriminator;
-    // Store the user id, username, discriminator
-    await upsertObject(
-      postgres,
-      'link_account',
-      {
-        accountid: accountid,
-        accountname: accountname,
-        discriminator: discriminator,
-        uid: decoded.uid,
-        kind: kind,
-      },
-      { uid: true, kind: true },
-    );
-    res.json({});
-  } else {
-    res.status(400).json({ error: 'unsupported kind' });
-  }
+  // Discord authentication removed
+  res.status(400).json({ error: 'unsupported authentication method' });
 });
 
 app.delete('/linkAccount', async (req, res) => {
@@ -871,7 +844,7 @@ async function getStats() {
   const numSubs = Number(
     (await postgres?.query('SELECT count(1) from subscriber'))?.rows[0].count,
   );
-  const discordBotWatch = await getRedisCountDay('discordBotWatch');
+  // Discord bot removed
   const createRoomErrors = await getRedisCountDay('createRoomError');
   const deleteAccounts = await getRedisCountDay('deleteAccount');
   const chatMessages = await getRedisCountDay('chatMessages');
@@ -984,7 +957,7 @@ async function getStats() {
     numPermaRooms,
     numAllRooms,
     numSubs,
-    discordBotWatch,
+    // discordBotWatch removed,
     createRoomErrors,
     createRoomPreloads,
     deleteAccounts,

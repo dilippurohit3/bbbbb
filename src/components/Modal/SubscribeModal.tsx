@@ -49,21 +49,21 @@ export class SubscribeModal extends React.Component<{
     const { closeSubscribe } = this.props;
     return (
       <Modal open={true} onClose={closeSubscribe}>
-        <Modal.Header>Subscribe to WatchParty Plus</Modal.Header>
+        <Modal.Header>Subscribe to Boltzy Plus</Modal.Header>
         <Modal.Content image>
           {/* <Image wrapped size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' /> */}
           <Modal.Description>
             <div>
               Subscriptions help us maintain the service and build new features!
-              Please consider supporting us if you're enjoying WatchParty.
+              Please consider supporting us if you're enjoying Boltzy.
             </div>
             <Header>Features</Header>
             <Table definition unstackable striped celled>
               <Table.Header>
                 <Table.Row>
                   <Table.HeaderCell />
-                  <Table.HeaderCell>WatchParty Free</Table.HeaderCell>
-                  <Table.HeaderCell>WatchParty Plus</Table.HeaderCell>
+                  <Table.HeaderCell>Boltzy Free</Table.HeaderCell>
+                  <Table.HeaderCell>Boltzy Plus</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>
 

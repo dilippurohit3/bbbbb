@@ -295,6 +295,7 @@ export class TopBar extends React.Component<{
     return (
       <React.Fragment>
         <div
+          className="topbar-container"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -380,24 +381,6 @@ export class TopBar extends React.Component<{
                 justifyContent: 'center',
               }}
             >
-              <a
-                href="https://discord.gg/3rYj5HV"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footerIcon"
-                title="Discord"
-              >
-                <Icon name="discord" size="big" link />
-              </a>
-              <a
-                href="https://github.com/howardchung/watchparty"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footerIcon"
-                title="GitHub"
-              >
-                <Icon name="github" size="big" link />
-              </a>
             </div>
             {this.props.showInviteButton && <InviteButton />}
             {!this.props.hideNewRoom && <NewRoomButton openNewTab />}
@@ -405,7 +388,11 @@ export class TopBar extends React.Component<{
               <ListRoomsButton />
             )}
             {subscribeButton}
-            {!this.props.hideSignin && <SignInButton />}
+            {!this.props.hideSignin && (
+              <div className="signin-button-container">
+                <SignInButton />
+              </div>
+            )}
           </div>
         </div>
       </React.Fragment>

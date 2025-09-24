@@ -5,7 +5,7 @@
   
   **Watch videos together with friends anywhere.**
   
-  [![Netflix Sync](https://img.shields.io/badge/Netflix-Sync-red?style=for-the-badge&logo=netflix)](https://github.com/dilippurohit3/boltzy)
+  [![Netflix Sync](https://img.shields.io/badge/Netflix-Sync-red?style=for-the-badge&logo=netflix)](#)
   [![React](https://img.shields.io/badge/React-18+-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
   [![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
@@ -49,7 +49,7 @@ Boltzy is a modern, Netflix-inspired video synchronization platform that allows 
 
 ```bash
 # Clone the repository
-git clone https://github.com/dilippurohit3/boltzy.git
+git clone <repository-url>
 cd boltzy
 
 # Verify you're in the correct directory
@@ -110,7 +110,7 @@ sudo -u postgres createdb boltzy
 #### Redis Installation & Setup
 
 **Windows:**
-1. Download Redis from [github.com/microsoftarchive/redis](https://github.com/microsoftarchive/redis/releases)
+1. Download Redis from the official Redis website
 2. Extract and run `redis-server.exe`
 
 **macOS:**
@@ -600,9 +600,9 @@ This software and associated documentation files (the "Software") are the exclus
 
 ## 🆘 Support
 
-- **Documentation** - [Wiki](https://github.com/dilippurohit3/boltzy/wiki)
-- **Issues** - [GitHub Issues](https://github.com/dilippurohit3/boltzy/issues)
-- **Discussions** - [GitHub Discussions](https://github.com/dilippurohit3/boltzy/discussions)
+- **Documentation** - Coming soon
+- **Issues** - Contact support
+- **Discussions** - Contact support
 - **Email** - [admin@boltzy.me](mailto:admin@boltzy.me)
 
 ## 🙏 Acknowledgments
@@ -618,6 +618,6 @@ This software and associated documentation files (the "Software") are the exclus
 <div align="center">
   <strong>Made with ⚡ by Dilippurohit3</strong>
   
-  [![GitHub](https://img.shields.io/badge/GitHub-dilippurohit3-black?style=for-the-badge&logo=github)](https://github.com/dilippurohit3)
+  [![Boltzy](https://img.shields.io/badge/Boltzy-Official-red?style=for-the-badge&logo=lightning)](#)
   [![Email](https://img.shields.io/badge/Email-admin@boltzy.me-red?style=for-the-badge&logo=gmail)](mailto:admin@boltzy.me)
 </div>

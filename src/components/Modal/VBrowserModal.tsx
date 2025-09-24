@@ -114,8 +114,8 @@ export class VBrowserModal extends React.Component<{
                 <Table.Header>
                   <Table.Row>
                     <Table.HeaderCell />
-                    <Table.HeaderCell>WatchParty Free</Table.HeaderCell>
-                    <Table.HeaderCell>WatchParty Plus</Table.HeaderCell>
+                    <Table.HeaderCell>Boltzy Free</Table.HeaderCell>
+                    <Table.HeaderCell>Boltzy Plus</Table.HeaderCell>
                   </Table.Row>
                 </Table.Header>
 

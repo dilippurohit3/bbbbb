@@ -7,11 +7,13 @@
   background: var(--background-dark);
   color: var(--text-primary);
   min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
 .appContainer {
-  background: var(--background-dark);
+  background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-darker) 100%);
   min-height: 100vh;
+  position: relative;
 }
 
 .videoContent {
@@ -30,6 +32,17 @@
   justify-content: center;
   /* Making this larger causes issues on mobile */
   min-height: 48vh;
+  background: var(--surface-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  overflow: hidden;
+  transition: var(--transition-normal);
+}
+
+.playerContainer:hover {
+  box-shadow: 0 12px 48px var(--shadow-color);
+  transform: translateY(-2px);
 }
 
 @media only screen and (max-width: 600px) {
@@ -42,16 +55,42 @@
 
 .leftColumn {
   flex-grow: 1;
+  background: var(--surface-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px var(--shadow-color);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-sm);
+  transition: var(--transition-normal);
   @media only screen and (max-width: 600px) {
     width: calc(100% - 8px);
+    margin: var(--spacing-xs);
+    padding: var(--spacing-md);
   }
+}
+
+.leftColumn:hover {
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transform: translateY(-1px);
 }
 
 .rightColumn {
   flex-shrink: 0;
+  background: var(--surface-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px var(--shadow-color);
+  margin: var(--spacing-sm);
+  transition: var(--transition-normal);
   @media only screen and (max-width: 600px) {
     width: calc(100% - 8px);
+    margin: var(--spacing-xs);
   }
+}
+
+.rightColumn:hover {
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transform: translateY(-1px);
 }
 
 .toolToggle {
@@ -89,4 +128,97 @@
 .fullHeightColumnFullscreen.fullHeightColumnFullscreen.fullHeightColumnFullscreen {
   height: calc(100vh);
   transition: width ease-out 0.5s;
+}
+
+/* Enhanced room UI styling */
+.roomContainer {
+  background: var(--background-dark);
+  min-height: 100vh;
+  padding: var(--spacing-md);
+}
+
+.roomHeader {
+  background: var(--surface-dark);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px var(--shadow-color);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  transition: var(--transition-normal);
+}
+
+.roomHeader:hover {
+  box-shadow: 0 8px 24px var(--shadow-color);
+  transform: translateY(-1px);
+}
+
+.mediaInput {
+  background: var(--surface-darker) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-primary) !important;
+  padding: var(--spacing-md) !important;
+  font-size: 16px !important;
+  transition: var(--transition-fast) !important;
+}
+
+.mediaInput:focus {
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2) !important;
+  outline: none !important;
+}
+
+.mediaInput::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.mediaButton {
+  background: var(--surface-darker) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-primary) !important;
+  padding: var(--spacing-md) var(--spacing-lg) !important;
+  transition: var(--transition-fast) !important;
+  font-weight: 500 !important;
+}
+
+.mediaButton:hover {
+  background: var(--primary-red) !important;
+  border-color: var(--primary-red) !important;
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3) !important;
+}
+
+.mediaButton.active {
+  background: var(--primary-red) !important;
+  border-color: var(--primary-red) !important;
+  color: white !important;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-muted);
+}
+
+.emptyStateIcon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.6;
+}
+
+.emptyStateText {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.emptyStateSubtext {
+  font-size: 14px;
+  opacity: 0.8;
 }

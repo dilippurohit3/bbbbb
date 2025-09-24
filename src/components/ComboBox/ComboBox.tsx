@@ -127,7 +127,7 @@ export class ComboBox extends React.Component<ComboBoxProps> {
       <div style={{ position: 'relative', display: 'flex', flexGrow: 1 }}>
         <Form style={{ width: '100%' }} autoComplete="off">
           <Input
-            inverted
+            className="mediaInput"
             fluid
             focus
             disabled={this.props.disabled}
