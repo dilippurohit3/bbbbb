@@ -205,8 +205,8 @@ A Virtual Browser (VBrowser) is a browser running in the cloud that everyone in 
 - **URL Sharing**: Paste any video URL to watch together
 - **VBrowser**: Access any website together in a virtual browser
 
-### How does Netflix sync work?
-Our Netflix sync feature synchronizes playback across all participants, so everyone sees the same content at the same time. It works by detecting Netflix's player state and coordinating playback.
+### How does Netflix work?
+Netflix works just like Rave! When you click the Netflix button, it opens Netflix in a shared virtual browser that everyone can see and control. You can log into your Netflix account directly within the virtual browser and watch together seamlessly.
 
 ## Technical Questions
 
@@ -316,7 +316,7 @@ No downloads, no complicated setup. Just create a room and share the link. Your 
 ### 🎬 **Universal Compatibility**
 Watch anything together:
 - **YouTube** videos with full sync
-- **Netflix** with our advanced synchronization
+- **Netflix** in a shared virtual browser (just like Rave!)
 - **Your own files** with drag-and-drop upload
 - **Any website** through our Virtual Browser
 - **Screen sharing** for anything else

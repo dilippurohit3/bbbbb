@@ -82,7 +82,7 @@ export const Home = () => {
             <Feature
               icon="video"
               title={`Netflix`}
-              text="Sync Netflix with friends using Rave-style synchronization."
+              text="Watch Netflix together in a shared virtual browser - just like Rave!"
               className={`${styles.featureCard} ${styles.fadeInUp}`}
             />
             <Feature
