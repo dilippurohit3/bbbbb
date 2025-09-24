@@ -28,31 +28,31 @@ export const Home = () => {
             <Icon name="cogs" className={styles.sectionIcon} />
             Premium Features
           </div>
-          <div className={styles.featureSection}>
-            <Feature
-              icon="sync"
-              title="Synchronized Play"
-              text="Starts, stops, and seeks are synchronized to everyone, so take those restroom and snack breaks without worrying about falling behind."
+        <div className={styles.featureSection}>
+          <Feature
+            icon="sync"
+            title="Synchronized Play"
+            text="Starts, stops, and seeks are synchronized to everyone, so take those restroom and snack breaks without worrying about falling behind."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="conversation"
+          />
+          <Feature
+            icon="conversation"
               title="Real-time Chat"
               text="Chat with others in your room. React with emojis and GIFs to share the moment together."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="list"
+          />
+          <Feature
+            icon="list"
               title="Smart Playlists"
-              text="Set up a whole list of videos to play next, and rearrange to your heart's content."
+            text="Set up a whole list of videos to play next, and rearrange to your heart's content."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="video"
+          />
+          <Feature
+            icon="video"
               title="Video Chat"
               text="Jump into video chat if you'd rather be face-to-face. See each other's reactions in real-time."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
+          />
           </div>
         </div>
         <Hero
@@ -66,17 +66,17 @@ export const Home = () => {
             <Icon name="film" className={styles.sectionIcon} />
             Watch Anything Together
           </div>
-          <div className={styles.featureSection}>
-            <Feature
-              icon="desktop"
-              title={`VBrowser`}
-              text="Watch together on a virtual browser running in the cloud."
+        <div className={styles.featureSection}>
+          <Feature
+            icon="desktop"
+            title={`VBrowser`}
+            text="Watch together on a virtual browser running in the cloud."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="youtube"
-              title={`YouTube`}
-              text="Watch videos together from YouTube."
+          />
+          <Feature
+            icon="youtube"
+            title={`YouTube`}
+            text="Watch videos together from YouTube."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
             />
             <Feature
@@ -84,25 +84,25 @@ export const Home = () => {
               title={`Netflix`}
               text="Watch Netflix together in a shared virtual browser - just like Rave!"
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="slideshare"
-              title={`Screensharing`}
-              text="Share a browser tab or your desktop."
+          />
+          <Feature
+            icon="slideshare"
+            title={`Screensharing`}
+            text="Share a browser tab or your desktop."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="file"
-              title={`File`}
-              text="Upload and stream your own file."
+          />
+          <Feature
+            icon="file"
+            title={`File`}
+            text="Upload and stream your own file."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
-            <Feature
-              icon="linkify"
-              title={`URL`}
-              text="Paste in a video URL for everyone to watch from."
+          />
+          <Feature
+            icon="linkify"
+            title={`URL`}
+            text="Paste in a video URL for everyone to watch from."
               className={`${styles.featureCard} ${styles.fadeInUp}`}
-            />
+          />
           </div>
         </div>
         <Hero
@@ -121,7 +121,7 @@ export const Home = () => {
             <div className={styles.stepsGrid}>
               <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
                 <div className={styles.stepIcon}>
-                  <Icon name="certificate" />
+                <Icon name="certificate" />
                 </div>
                 <div className={styles.stepNumber}>1</div>
                 <div className={styles.stepTitle}>Make a room</div>
@@ -130,7 +130,7 @@ export const Home = () => {
               
               <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
                 <div className={styles.stepIcon}>
-                  <Icon name="group" />
+                <Icon name="group" />
                 </div>
                 <div className={styles.stepNumber}>2</div>
                 <div className={styles.stepTitle}>Share with friends</div>
@@ -139,7 +139,7 @@ export const Home = () => {
               
               <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
                 <div className={styles.stepIcon}>
-                  <Icon name="film" />
+                <Icon name="film" />
                 </div>
                 <div className={styles.stepNumber}>3</div>
                 <div className={styles.stepTitle}>Pick content</div>
@@ -148,7 +148,7 @@ export const Home = () => {
               
               <div className={`${styles.stepCard} ${styles.fadeInUp}`}>
                 <div className={styles.stepIcon}>
-                  <Icon name="thumbs up outline" />
+                <Icon name="thumbs up outline" />
                 </div>
                 <div className={styles.stepNumber}>4</div>
                 <div className={styles.stepTitle}>Enjoy together!</div>
@@ -157,7 +157,7 @@ export const Home = () => {
             </div>
             <div className={styles.ctaContainer}>
               <NewRoomButton size="huge" className={styles.heroButton} />
-            </div>
+          </div>
           </div>
         </div>
       </div>
