@@ -99,7 +99,7 @@
     "@types/react-transition-group": "^4.4.10",
     "@types/recharts": "^1.8.29",
     "@types/ssh2-streams": "^0.1.12",
-    "@types/webtorrent": "^0.109.7",
+    "@types/webtorrent": "^0.110.1",
     "@types/youtube": "^0.0.50",
     "typescript": "^5.9.2",
     "vite": "^7.1.6"
